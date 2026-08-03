@@ -75,6 +75,8 @@ iguales o diferentes en cada caso? ¿A qué se debe esto?
 sensores para el monitoreo del proceso respiratorio? ¿Cuáles podrían ser
 las razones?
 
+#Análisis de Resultados
+
 #Conclusiones 
 
 #Referencias 
