@@ -1,28 +1,22 @@
 # Monitoreo-del-Patron-y-la-Frecuencia-Respiratoria
 #Introducción
 
-La respiración es un proceso fisiológico esencial para la vida que permite el intercambio gaseoso a través de la membrana alveolocapilar, suministrando oxígeno (O₂) a los tejidos para el metabolismo celular y eliminando el dióxido de carbono (CO₂) resultante
-,
-. Este proceso se fundamenta en un ciclo mecánico compuesto por una fase de inspiración activa y una de espiración, que en condiciones normales de reposo es pasiva
-. El sistema respiratorio se divide funcionalmente en los pulmones, encargados de la conducción y el intercambio, y la bomba ventilatoria, constituida por los centros respiratorios, los nervios periféricos, la estructura ósea del tórax y los músculos respiratorios
-.
+La respiración es un proceso fisiológico esencial para la vida que permite el intercambio gaseoso a través de la membrana alveolocapilar, suministrando oxígeno (O₂) a los tejidos para el metabolismo celular y eliminando el dióxido de carbono (CO₂) resultante.
+Este proceso se fundamenta en un ciclo mecánico compuesto por una fase de inspiración activa y una de espiración, que en condiciones normales de reposo es pasiva
+. El sistema respiratorio se divide funcionalmente en los pulmones los cuales son los encargados de la conducción y el intercambio, y la bomba ventilatoria es aquella que esta constituida por los centros respiratorios, los nervios periféricos, la estructura ósea del tórax y los músculos respiratorios.
+
 La mecánica pulmonar está regida por propiedades físicas críticas como la elasticidad, que permite al sistema volver a su posición inicial tras la deformación; la viscosidad, relacionada con la fricción interna durante el flujo de aire; y la tensión superficial en la capa alveolar
-. El diafragma actúa como el principal músculo agonista de la inspiración, desplazándose de forma similar a un pistón para expandir la cavidad torácica y reducir la presión pleural, lo que genera el gradiente de presión necesario para la entrada de aire
-,
+. El diafragma actúa como el principal músculo agonista de la inspiración, desplazándose para expandir la cavidad torácica y reducir la presión pleural, lo que genera el gradiente de presión necesario para la entrada de aire
 . El equilibrio entre la capacidad neuromuscular de esta bomba y las cargas elásticas y resistivas impuestas por el sistema es fundamental para evitar la fatiga muscular y la consecuente falla ventilatoria
-,
 .
 Clínicamente, la frecuencia respiratoria (RR) se reconoce como un signo vital de alta sensibilidad para el monitoreo de la estabilidad del paciente
-,
 . Alteraciones en este parámetro son marcadores precoces de patologías graves, permitiendo predecir eventos como paros cardíacos o ingresos a unidades de cuidado intensivo con mayor antelación y especificidad que otros signos como el pulso o la presión arterial
 . No obstante, el patrón respiratorio es altamente variable y se ve influenciado por factores metabólicos, neurológicos y actividades voluntarias como la verbalización o el habla
 ,
 .
 En el ámbito de la ingeniería biomédica, la medición precisa de estas variables se logra mediante sistemas de instrumentación que integran sensores capaces de capturar variaciones físicas del proceso fisiológico
-. Los sensores de detección de fuerza por resistencia (FSR), por ejemplo, permiten convertir la presión mecánica ejercida por la expansión torácica en señales eléctricas mediante configuraciones de divisor de voltaje y acondicionamiento con amplificadores operacionales
-. El desarrollo de estos sistemas no solo permite el seguimiento clínico continuo, sino que también facilita el estudio de cómo tareas específicas, como la verbalización, alteran la relación temporal entre las fases del ciclo respiratorio
-,
-.
+. Los sensores de detección de fuerza por resistencia (FSR), por ejemplo, permiten convertir la presión mecánica ejercida por la expansión torácica en señales eléctricas mediante configuraciones de divisor de voltaje. El desarrollo de estos sistemas no solo permite el seguimiento clínico continuo, sino que también facilita el estudio de cómo tareas específicas, como la fonación, alteran la relación temporal entre las fases del ciclo respiratorio
+
 
 #Objetivos
 
