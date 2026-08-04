@@ -68,16 +68,16 @@ La adaptación del sensor se fundamenta en la mecánica respiratoria, donde la c
  
 El procedimiento de adaptación consiste en situar el área activa del sensor sobre la región torácica o abdominal del sujeto, donde el desplazamiento sea más pronunciado, el sensor se asegura mediante una banda elástica que mantenga una tensión base; de esta forma, cada fase inspiratoria generará un aumento de la fuerza sobre el sensor, disminuyendo su resistencia y produciendo un pico de voltaje en la señal adquirida. Esta configuración permite diferenciar claramente entre la inspiración activa y la espiración, cumpliendo con el objetivo de monitorear la frecuencia respiratoria (RR) en tiempo real.
 
-4. Diseñe y elabore un sistema que acondicione y digitalice la señal respiratoria
+3. Diseñe y elabore un sistema que acondicione y digitalice la señal respiratoria
 utilizando para ello el sensor previamente elegido. Puede utilizar el conversor
 análogo-digital integrado en la placa Arduino.
 
 
-6. Coloque el sensor sobre alguno de los miembros del equipo para verificar la
+4. Coloque el sensor sobre alguno de los miembros del equipo para verificar la
 operatividad del sistema.
 
 
-8. Empleando la función “Serial Plotter” del menú “Herramientas” del entorno de
+5. Empleando la función “Serial Plotter” del menú “Herramientas” del entorno de
 programación, tome capturas de pantalla que muestren la señal:
 
 a. En reposo (cuente manualmente el número de veces que el sujeto inhala o
