@@ -93,7 +93,8 @@ PARTE B
 temporizada de la señal respiratoria adquirida por el sistema que Ud. ha
 construido y probado.
 
-'
+
+```
 clear; close all; clc;
 
 COM = "COM3";            
@@ -172,9 +173,8 @@ f_dominante = f_validas(idxMax);
 fr_resp = f_dominante * 60; 
 
 fprintf('Frecuencia dominante: %.3f Hz (%.1f resp/min)\n', f_dominante, fr_resp);
+```
 
-
-'
 
 2. Capturar 30 segundos de señal respiratoria bajo las condiciones establecidas
 en el paso 5 de la parte A (incisos “a” y “b”). Recuerde guardar en cada caso el
@@ -219,7 +219,6 @@ iguales o diferentes en cada caso? ¿A qué se debe esto?
 sensores para el monitoreo del proceso respiratorio? ¿Cuáles podrían ser
 las razones?
 
-#Análisis de Resultados
 
 #Conclusiones 
 
