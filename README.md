@@ -51,14 +51,41 @@ caso de tratarse de un sensor pasivo. Medite sobre cómo adaptar el sensor al
 cuerpo del sujeto de prueba para capturar la señal con un mínimo de
 interferencia.
 
-3. Diseñe y elabore un sistema que acondicione y digitalice la señal respiratoria
+Para la detección de las variaciones mecánicas asociadas al ciclo ventilatorio, se ha seleccionado el sensor de fuerza por resistencia (FSR), específicamente el modelo FSR 402, este transductor se define como un dispositivo de película gruesa de polímero (PTF) que presenta una disminución en su resistencia eléctrica ante el incremento de la fuerza aplicada sobre su superficie activa.
+
+La elección del FSR 402 responde a los requerimientos de sensibilidad y dimensiones necesarios para el monitoreo no invasivo. A demás el sensor posee una fuerza de actuación mínima de 0,1 N y un rango de sensibilidad que se extiende hasta los 10 N, lo cual es adecuado para captar la presión ejercida por la expansión de la caja torácica durante la inspiración.El FSR tiene un  perfil ultra delgado de 0,55 mm y su área activa de 12,7 mm de diámetro facilitan su integración entre el cuerpo y una banda de sujeción sin alterar el patrón fisiológico del sujeto.
+
+La alimentación del sensor se realizó mediante una configuración de divisor de voltaje, que permite convertir la variación de resistencia en una señal de voltaje analógica (V OUT) proporcional a la fuerza mecánica, lo cual facilitó su digitalización a través de una placa ESP32-S3-N16R8.
+
+La adaptación del sensor se fundamenta en la mecánica respiratoria, donde la contracción del diafragma y de los músculos intercostales externos
+ provoca un aumento del diámetro transversal y anteroposterior de la caja torácica. Este desplazamiento mecánico es el que se busca capturar para extraer el patrón respiratorio.
+ 
+El procedimiento de adaptación consiste en situar el área activa del sensor sobre la región torácica o abdominal del sujeto, donde el desplazamiento sea más pronunciado, el sensor se asegura mediante una banda elástica que mantenga una tensión base; de esta forma, cada fase inspiratoria generará un aumento de la fuerza sobre el sensor, disminuyendo su resistencia y produciendo un pico de voltaje en la señal adquirida
+. Esta configuración permite diferenciar claramente entre la inspiración activa y la espiración, cumpliendo con el objetivo de monitorear la frecuencia respiratoria (RR) en tiempo real.
+
+4. Diseñe y elabore un sistema que acondicione y digitalice la señal respiratoria
 utilizando para ello el sensor previamente elegido. Puede utilizar el conversor
 análogo-digital integrado en la placa Arduino.
 
-4. Coloque el sensor sobre alguno de los miembros del equipo para verificar la
+
+<img width="900" height="1600" alt="image" src="https://github.com/user-attachments/assets/cd15bc43-2cc6-46f5-9386-862c725cd04d" />
+
+
+
+<img width="900" height="1600" alt="image" src="https://github.com/user-attachments/assets/871a4a26-fae0-4306-8527-9c6029680f2c" />
+
+
+
+<img width="1600" height="1204" alt="image" src="https://github.com/user-attachments/assets/f1568bb1-e51d-4165-9723-7852f22a4eee" />
+
+
+
+
+
+6. Coloque el sensor sobre alguno de los miembros del equipo para verificar la
 operatividad del sistema.
 
-5. Empleando la función “Serial Plotter” del menú “Herramientas” del entorno de
+7. Empleando la función “Serial Plotter” del menú “Herramientas” del entorno de
 programación, tome capturas de pantalla que muestren la señal:
 
 a. En reposo (cuente manualmente el número de veces que el sujeto inhala o
