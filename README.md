@@ -98,5 +98,21 @@ las razones?
 
 #Referencias 
 
+[1] Universidad Militar Nueva Granada, “Guía de Preparación Práctica de Laboratorio: Monitoreo del patrón y frecuencia respiratoria,” Ing. Alejandra Rosero Cárdenas, 2025.
 
+[2] R. D. Camargo R., “Signo vital Respiración,” Acta Colombiana de Cuidado Intensivo, vol. 11, no. 2, pp. 11-21, 2010.
+
+[3] R. D. Camargo R., “Signos Vitales,” Acta Colombiana de Cuidado Intensivo, vol. 11, no. 2, pp. 179-181, 2011.
+
+[4] H. Puppo, R. Fernández, y G. Hidalgo, “Función Pulmonar: Fisiología de los músculos de la respiración,” Revista Neumología Pediátrica, vol. 16, no. 4, pp. 146-151, 2021.
+
+[5] J. Canet, “Ventilación y Mecánica Respiratoria,” en Fisiología Respiratoria, pp. 1-2.
+
+[6] Interlink Electronics, “FSR 402 Data Sheet: Force Sensing Resistor,” 2010.
+
+[7] W. Cristancho Gómez, Fisiología respiratoria: Lo esencial en la práctica clínica, Bogotá: Editorial El Manual Moderno.
+
+[8] J. B. West, Fisiología del sistema respiratorio: Conceptos fundamentales, fragmentos de capítulos y capturas de pantalla integradas en la práctica de laboratorio.
+ 
+ [9] A. F. Tresguerres, C. Ariznavarreta, V. Cachofeiro, D. Cardinali, E. Escrich, P. Gil-Loyzaga, V. Lahera Juliá, F. Mora Teruel, M. Romano Pardo y J. Tamargo Menéndez, Fisiología humana, 3.ª ed. Madrid, España: McGraw-Hill Interamericana de España, 2005.
 
