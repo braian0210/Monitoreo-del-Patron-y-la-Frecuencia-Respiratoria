@@ -66,7 +66,7 @@ La adaptación del sensor se fundamenta en la mecánica respiratoria, donde la c
 
  
  
-El procedimiento de adaptación consiste en situar el área activa del sensor sobre la región torácica o abdominal del sujeto, donde el desplazamiento sea más pronunciado, el sensor se asegura mediante una banda elástica que mantenga una tensión base; de esta forma, cada fase inspiratoria generará un aumento de la fuerza sobre el sensor, disminuyendo su resistencia y produciendo un pico de voltaje en la señal adquirida. Esta configuración permite diferenciar claramente entre la inspiración activa y la espiración, cumpliendo con el objetivo de monitorear la frecuencia respiratoria (RR) en tiempo real.
+El procedimiento de adaptación consiste en situar el área activa del sensor sobre la región torácica o abdominal del sujeto, el sensor se asegura mediante una banda elástica que mantenga una tensión base; de esta forma, cada fase inspiratoria generará un aumento de la fuerza sobre el sensor, disminuyendo su resistencia y produciendo un pico de voltaje en la señal adquirida. Esta configuración permite diferenciar claramente entre la inspiración activa y la espiración, cumpliendo con el objetivo de monitorear la frecuencia respiratoria  en tiempo real.
 
 3. Diseñe y elabore un sistema que acondicione y digitalice la señal respiratoria
 utilizando para ello el sensor previamente elegido. Puede utilizar el conversor
@@ -83,6 +83,8 @@ programación, tome capturas de pantalla que muestren la señal:
 a. En reposo (cuente manualmente el número de veces que el sujeto inhala o
 exhala).
 
+
+
 b. Mientras el sujeto de prueba habla o lee.
 
 PARTE B
@@ -91,16 +93,122 @@ PARTE B
 temporizada de la señal respiratoria adquirida por el sistema que Ud. ha
 construido y probado.
 
+'
+clear; close all; clc;
+
+COM = "COM3";            
+baudRate = 115200;
+Fs = 100;               
+duracion_s = 30;
+Nmuestras = Fs * duracion_s;
+
+condicion = input('Condición de la captura ("reposo" o "habla"): ', 's');
+
+s = serialport(COM, baudRate);
+configureTerminator(s, "LF");
+flush(s);
+
+
+datos = nan(Nmuestras, 1);
+fprintf('Iniciando captura de %d segundos (%s)...\n', duracion_s, condicion);
+
+tic;
+idx = 1;
+while idx <= Nmuestras
+    if s.NumBytesAvailable > 0
+        linea = readline(s);
+        valor = str2double(linea);
+        if ~isnan(valor)
+            datos(idx) = valor;
+            idx = idx + 1;
+        end
+    end
+end
+tiempo_transcurrido = toc;
+clear s;
+
+t = (0:Nmuestras-1)' / Fs;
+
+nombreArchivo = sprintf('senal_respiratoria_%s.mat', condicion);
+save(nombreArchivo, 'datos', 't', 'Fs', 'condicion');
+fprintf('Datos guardados en %s (duración real: %.2f s)\n', nombreArchivo, tiempo_transcurrido);
+
+
+fc_baja = 0.05;   
+fc_alta = 5;   
+[b, a] = butter(4, [fc_baja fc_alta] / (Fs/2), 'bandpass');
+datos_filtrados = filtfilt(b, a, datos - mean(datos));
+
+figure;
+subplot(2,1,1);
+plot(t, datos);
+title(['Señal cruda - ' condicion]);
+xlabel('Tiempo (s)'); ylabel('ADC'); grid on;
+
+subplot(2,1,2);
+plot(t, datos_filtrados);
+title('Señal filtrada (pasa-banda Butterworth 0.1-1.0 Hz)');
+xlabel('Tiempo (s)'); ylabel('Amplitud'); grid on;
+
+N = length(datos_filtrados);
+Y = fft(datos_filtrados);
+f = (0:N-1) * (Fs/N);
+P = abs(Y/N);
+P = P(1:floor(N/2)+1);
+f = f(1:floor(N/2)+1);
+
+figure;
+plot(f, P);
+xlim([0 2]);
+xlabel('Frecuencia (Hz)');
+ylabel('|P(f)|');
+title(['Espectro de frecuencia - ' condicion]);
+grid on;
+
+mascara = f > 0.05;
+[~, idxMax] = max(P(mascara));
+f_validas = f(mascara);
+f_dominante = f_validas(idxMax);
+fr_resp = f_dominante * 60; 
+
+fprintf('Frecuencia dominante: %.3f Hz (%.1f resp/min)\n', f_dominante, fr_resp);
+
+
+'
+
 2. Capturar 30 segundos de señal respiratoria bajo las condiciones establecidas
 en el paso 5 de la parte A (incisos “a” y “b”). Recuerde guardar en cada caso el
 correspondiente archivo .MAT.
+
+
+
+<img width="935" height="297" alt="image" src="https://github.com/user-attachments/assets/c2c8b1d3-c98b-4ca1-81c0-a838b5430aee" />
+
+
+
+<img width="938" height="301" alt="image" src="https://github.com/user-attachments/assets/0db29319-3e1e-4173-a6a7-e37368a71e5d" />
+
+
+
 
 3. De ser necesario, aplique los filtros correspondientes para mejorar la calidad
 de ambas señales. Especifique el tipo de filtro (pasa-bajas, pasa banda) y la(s)
 frecuencia(s) de corte.
 
 4. Obtenga la representación en frecuencia de ambas señales e identifique la
-frecuencia dominante en cada caso.
+frecuencia dominante en cada caso.ç
+
+Para el caso en reposo:
+
+
+<img width="1123" height="747" alt="espectro_profereposo" src="https://github.com/user-attachments/assets/507d0391-bd64-46f6-b1b2-bf149838ffaf" />
+
+
+Para el caso hablando:
+
+
+<img width="1123" height="747" alt="espectro_profehabla" src="https://github.com/user-attachments/assets/11ae9788-a06b-4bc5-89d9-b6a7b9ae6da7" />
+
 
 PARTE C
 
