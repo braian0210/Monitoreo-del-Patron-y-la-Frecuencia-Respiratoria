@@ -20,7 +20,8 @@ En el ámbito de la ingeniería biomédica, la medición precisa de estas variab
 
 #Objetivos
 
-Objetivo General: Evaluar la influencia del habla o verbalización sobre el
+Objetivo General
+• Evaluar la influencia del habla o verbalización sobre el
 patrón respiratorio.
 
 Objetivos Específicos
@@ -32,7 +33,6 @@ respiratoria.
 
 • Identificar tareas de verbalización a partir del patrón y/o la frecuencia
 respiratoria.
-
 
 #Metogología
 
