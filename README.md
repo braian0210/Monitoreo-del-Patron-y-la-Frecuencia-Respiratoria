@@ -94,9 +94,40 @@ Esta señal se digitalizó mediante el conversor análogo digital integrado en l
 A continuación, se anexa la imagen que describe el divisor de voltaje anteriormente mencionado y las diferentes conexiones.
 
 
+
 <img width="495" height="209" alt="image" src="https://github.com/user-attachments/assets/27829b2f-fec4-4fae-a534-1326808c03a1" />
 
+Posteriormente para poder digitalizar el la señal, antes de poderla visualizar en MATLAB se realizó un código en ARduino IDE para configurar la placa y así poder realizar la respectiva configuración en MATLAB para enlazar la ESP32-S3N16R8 Y Capturar la señal.
 
+```
+
+const int FSR_PIN = 4;                         // GPIO4 -> ADC1_CH3
+const int ADC_RESOLUTION_BITS = 12;             // 0 a 4095
+const unsigned long SAMPLE_INTERVAL_US = 10000; // 10 ms -> Fs = 100 Hz
+
+unsigned long lastSampleTime = 0;
+
+void setup() {
+  Serial.begin(115200);
+  while (!Serial) { ; }
+
+  analogReadResolution(ADC_RESOLUTION_BITS);
+  analogSetPinAttenuation(FSR_PIN, ADC_11db);   // permite medir hasta ~3.3V
+
+  delay(1000); // tiempo para estabilizar antes de iniciar el envío
+}
+
+void loop() {
+  unsigned long now = micros();
+
+  if (now - lastSampleTime >= SAMPLE_INTERVAL_US) {
+    lastSampleTime = now;
+    int raw = analogRead(FSR_PIN);
+    Serial.println(raw);   // una muestra por línea -> Serial Plotter y MATLAB
+  }
+}
+
+```
 4. Coloque el sensor sobre alguno de los miembros del equipo para verificar la
 operatividad del sistema.
 
