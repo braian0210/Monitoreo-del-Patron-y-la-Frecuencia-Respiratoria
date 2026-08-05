@@ -84,6 +84,18 @@ El procedimiento de adaptación consiste en situar el área activa del sensor so
 utilizando para ello el sensor previamente elegido. Puede utilizar el conversor
 análogo-digital integrado en la placa Arduino.
 
+Debido a que se escogió el sensor FSR 402, para acondicionar la señal se elaboró un divisor de voltaje, en el cual el sensor se conecta en serie con una resistencia de medición (RM) fija. La salida (VOUT) corresponde a la fracción de la tensión de alimentación (V+) determinada con la relación[6]:
+                       RM/(RM+RFSR)                                  (1)
+
+De tal modo que al disminuir la resistencia del FSR con el aumento de la fuerza aplicada, la salida se incrementa proporcionalmente [6]. Para el caso practico elaborado, se utilizó una resistencia de 10kΩ la cual hacía posible que la señal se mantuviera periódica y no se saturara.
+
+Esta señal se digitalizó mediante el conversor análogo digital integrado en la ESP32-S3 N16R8, el rango de valores digitalizados corresponden a valores entre 0 y 4095, en donde para este cado este valor máximo representa 3.3 voltios. Para 
+
+A continuación, se anexa la imagen que describe el divisor de voltaje anteriormente mencionado y las diferentes conexiones.
+
+
+<img width="495" height="209" alt="image" src="https://github.com/user-attachments/assets/27829b2f-fec4-4fae-a534-1326808c03a1" />
+
 
 4. Coloque el sensor sobre alguno de los miembros del equipo para verificar la
 operatividad del sistema.
