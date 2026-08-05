@@ -330,9 +330,14 @@ PARTE C
 • Pregunta 1: ¿Son los patrones respiratorios y frecuencias respiratorias
 iguales o diferentes en cada caso? ¿A qué se debe esto?
 
+Diferentes en ambos aspectos, los patrones respiratorios en reposo se comportan como oscilaciones de forma similar a una señal senosoidal, pues comparte caracteristicas tipicas como un ritmo, frecuencia y amplitud constante ademas que una similitud entre sus ondas resultantes, esto se causa a un proceso mecanico repetitivo y sin interferencia, los musculos encargados de la respiracion aumentan el volumen del pulmon reduciendo su presion de forma natural y su relajacion reduce el volumen por lo cual la presion aumenta y el aire sale al ambiente por efecto boyle, mientras que en el habla para poder efectuar la fonacion, se realizan respiraciones mas abruptas y salidas de aire controladas dando un efecto impulso en la inspiracion y luego una señal descendiente, prolongada y controlada por la naturaleza de la frase,palabra u oracion efectuada.
+
 • Pregunta 2: ¿Cuáles serían las ventajas y desventajas de emplear múltiples
 sensores para el monitoreo del proceso respiratorio? ¿Cuáles podrían ser
 las razones?
+
+Primero es necesario diferenciar si los sensores son del mismo tipo con proposito de medir la misma variable fisiologica o diferentes, en caso de ser la misma (en este caso otro sensor de deformacion/presion), entre las ventajas tenemos la posibilidad de que se coloquen en los 2 pulmonnes y de esa manera comprobar la capacidad de almacenamiento de volumen entre los pulmones y un ponderado de ambos, esto permite medir la funcion pulmonar individual ademas de la coordinacion de la elevacion, una diferencia fuera de parametros podria significar malformacioens anatomicas o patologias fisiologicas de los musculos respiratorios, sin embargo requiere estudios para saber cuales son los parametros de diferencia entre ambos teniendo en cuenta que no son simetricamente perfecto por el volumen ocupado del lado que contiene al organo cardiaco sin contar el aumento en los equipos necesarios tanto profesional como tecnico.
+Por otro lado si son diferentes tipos, tambien tiene ventajas como la combinacion del sensor de deformacion toracica con otro sensor de CO2, para poder medir el proceso respiratorio tanto por medio de una medicion de diferencia anatomica entre las fases, como el intercambio de gases en su simultaneo y poder medir la concordancia, este puede ser utilizado especialmente en pacientes internados para comprobar el correcto flujo de oxigeno y evitar posibles hipercapnias e hipocapnias[10], pero se requiere tambien de mayor profundizacion tecnica y de que solo serviria como un remplazo temporal a la saturacion de oxigeno en sangre del pulsioximetro ya muy eficaz
 
 
 #Conclusiones 
