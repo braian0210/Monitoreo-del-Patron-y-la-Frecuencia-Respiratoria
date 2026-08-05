@@ -343,6 +343,8 @@ Para el caso en reposo:
 
 
 <img width="1123" height="747" alt="espectro_profereposo" src="https://github.com/user-attachments/assets/507d0391-bd64-46f6-b1b2-bf149838ffaf" />
+ <b>Figura 8.</b> Representación en Frecuencias en Reposo.
+</p>
 
 Como se puede observar en la imagen de captura de la señal en estado de reposo, la representación en frecuencias presenta un pico dominante en 0.2 Hz. Al convertir la frecuencia dominante a respiraciones por minuto (0,2 Hz * 60), se obtiene una frecuencia respiratoria de 12 respiraciones por minuto para la condición en reposo. Este valor es coherente con el conteo visual de ciclos realizado sobre la señal en el dominio del tiempo donde se observaron seis ciclos en 30 segundos, lo cual lo podemos comprobar matemáticamente como:
 
@@ -357,6 +359,8 @@ Para el caso hablando:
 
 
 <img width="178" height="165" alt="image" src="https://github.com/user-attachments/assets/9c45b3af-c75c-494f-b4ae-c3c91a6dacf9" />
+ <b>Figura 9.</b> Representación en Frecuencias Hablando.
+</p>
 
 
 Para el caso de habla, se obtuvo un pico dominante en 0,166667 Hz con una magnitud de 185.846 unidades y que a diferencia con la señal en reposo, se observa un segundo pico pronunciado alrededor de los 3 Hz y una magnitud de 80 unidades, lo que indica un espectro menos concentrado en una única frecuencia y por lo tanto un patrón respiratoria no tan periódico como el de reposo.
