@@ -99,6 +99,9 @@ A continuación, se anexa la imagen que describe el divisor de voltaje anteriorm
 
 Posteriormente para poder digitalizar el la señal, antes de poderla visualizar en MATLAB se realizó un código en ARduino IDE para configurar la placa y así poder realizar la respectiva configuración en MATLAB para enlazar la ESP32-S3N16R8 Y Capturar la señal.
 
+A continuación se anexa el código que se utilizó en Arduino IDE para configurar la placa
+
+
 ```
 
 const int FSR_PIN = 4;                         // GPIO4 -> ADC1_CH3
