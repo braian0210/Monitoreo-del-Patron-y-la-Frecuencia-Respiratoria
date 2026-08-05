@@ -357,10 +357,15 @@ Para el caso hablando:
 
 
 <img width="1123" height="747" alt="espectro_profehabla" src="https://github.com/user-attachments/assets/11ae9788-a06b-4bc5-89d9-b6a7b9ae6da7" />
+<p align="center">
+  <b>Figura 9.</b> Espectro de frecuencia en habla.
+</p>
 
 
 <img width="178" height="165" alt="image" src="https://github.com/user-attachments/assets/9c45b3af-c75c-494f-b4ae-c3c91a6dacf9" />
-
+<p align="left">
+  <b>Figura 10.</b> frecuencia pico en habla.
+</p>
 
 
 
