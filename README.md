@@ -63,7 +63,7 @@ caso de tratarse de un sensor pasivo. Medite sobre cómo adaptar el sensor al
 cuerpo del sujeto de prueba para capturar la señal con un mínimo de
 interferencia.
 
-Para la detección de las variaciones mecánicas asociadas al ciclo ventilatorio, se ha seleccionado el sensor de fuerza por resistencia (FS4), específicamente el modelo FSR 402, este transductor se define como un dispositivo de película gruesa de polímero (PTF) que presenta una disminución en su resistencia eléctrica ante el incremento de la fuerza aplicada sobre su superficie activa.
+Para la detección de las variaciones mecánicas asociadas al ciclo ventilatorio, se ha seleccionado el sensor de fuerza por resistencia (FS4), específicamente el modelo FSR 402, este transductor se define como un dispositivo de película gruesa de polímero  que presenta una disminución en su resistencia eléctrica ante el incremento de la fuerza aplicada sobre su superficie activa.
 
 La elección del FSR 402 responde a los requerimientos de sensibilidad y dimensiones necesarios para el monitoreo no invasivo. A demás el sensor posee una fuerza de actuación mínima de 0,1 N y un rango de sensibilidad que se extiende hasta los 10 N, lo cual es adecuado para captar la presión ejercida por la expansión de la caja torácica durante la inspiración. El FSR tiene un  perfil ultra delgado de 0,55 mm y su área activa de 12,7 mm de diámetro facilitan su integración entre el cuerpo y una banda de sujeción sin alterar el patrón fisiológico del sujeto. La alimentación del sensor se realizó mediante una configuración de divisor de voltaje, que permite convertir la variación de resistencia en una señal de voltaje analógica (V OUT) proporcional a la fuerza mecánica, lo cual facilitó su digitalización a través de una placa ESP32-S3-N16R8.
 
@@ -73,11 +73,11 @@ La adaptación del sensor se fundamenta en la mecánica respiratoria, donde la c
  Se anexa imagen del prototipo diseñado:
 
 
- <img width="1600" height="1204" alt="image" src="https://github.com/user-attachments/assets/f1568bb1-e51d-4165-9723-7852f22a4eee" />
+
+<img width="1600" height="1100" alt="dispisitivo" src="https://github.com/user-attachments/assets/782e1935-d55c-40d6-8108-171a00bbb9c8" />
 
 
- 
- 
+
 El procedimiento de adaptación consiste en situar el área activa del sensor sobre la región torácica o abdominal del sujeto, el sensor se asegura mediante una banda elástica que mantenga una tensión base; de esta forma, cada fase inspiratoria generará un aumento de la fuerza sobre el sensor, disminuyendo su resistencia y produciendo un pico de voltaje en la señal adquirida. Esta configuración permite diferenciar claramente entre la inspiración activa y la espiración, cumpliendo con el objetivo de monitorear la frecuencia respiratoria  en tiempo real.
 
 3. Diseñe y elabore un sistema que acondicione y digitalice la señal respiratoria
@@ -87,6 +87,63 @@ análogo-digital integrado en la placa Arduino.
 
 4. Coloque el sensor sobre alguno de los miembros del equipo para verificar la
 operatividad del sistema.
+
+Para esta sección, después de terminar el ensamble del sistema creado, se colocó en uno de los miembros del grupo de laboratorio. Posteriormente se elaboró un código de captura de tiempo real en MATLAB con el cual el objetivo era confirmar que el sistema entregaba una señal periódica y sincronizada con los ciclos de inspiración y espiración del sujeto de prueba antes de proceder a las capturas de 30 segundos en condiciones de reposo y habla.
+A continuación se anexa la imagen de la captura en tiempo real de la señal respiratoria de verificación de operatividad en donde se experimento realizando ciclos normales de inspiración y expiración y otros en los que se mantenían estos ciclos con el fin de evidenciar el funcionamiento correcto y la entrega de la señal del sistema creado.
+
+
+
+<img width="1619" height="748" alt="image" src="https://github.com/user-attachments/assets/d2354bd4-51ec-414d-bc06-38371abcf45b" />
+
+De igual forma se anexa el código en MATLAB con el cual se evidenció la operatividad del sistema por medio de la captura de la señal respiratoria en tiempo real.
+
+```
+clear; close all; clc;
+
+disp('Puertos disponibles:');
+disp(serialportlist("available"));
+
+COM = "COM3";          
+baudRate = 115200;      
+
+s = serialport(COM, baudRate);
+configureTerminator(s, "LF");
+flush(s);
+
+
+Fs = 100;               
+ventana_s = 60;         
+Nmuestras = Fs * ventana_s;
+
+t = (0:Nmuestras-1) / Fs;
+buffer = nan(1, Nmuestras);
+
+figure('Name', 'Señal respiratoria en tiempo real');
+h = plot(t, buffer);
+xlabel('Tiempo (s)');
+ylabel('Valor ADC (0-4095)');
+title('Señal respiratoria en tiempo real ');
+ylim([0 4095]);
+grid on;
+
+disp('Adquisición en tiempo real.');
+
+while ishandle(h)
+    if s.NumBytesAvailable > 0
+        linea = readline(s);
+        valor = str2double(linea);
+        if ~isnan(valor)
+            buffer = [buffer(2:end), valor];  
+            set(h, 'YData', buffer);
+            drawnow limitrate;
+        end
+    end
+end
+
+clear s;
+disp('Adquisición finalizada.');
+
+```
 
 
 5. Empleando la función “Serial Plotter” del menú “Herramientas” del entorno de
