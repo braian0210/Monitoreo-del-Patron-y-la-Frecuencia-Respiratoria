@@ -75,7 +75,9 @@ La adaptación del sensor se fundamenta en la mecánica respiratoria, donde la c
 
 
 <img width="1600" height="1100" alt="dispisitivo" src="https://github.com/user-attachments/assets/782e1935-d55c-40d6-8108-171a00bbb9c8" />
-
+<p align="center">
+  <b>Figura 1.</b> Prototipo de acople del sensor.
+</p>
 
 
 El procedimiento de adaptación consiste en situar el área activa del sensor sobre la región torácica o abdominal del sujeto, el sensor se asegura mediante una banda elástica que mantenga una tensión base; de esta forma, cada fase inspiratoria generará un aumento de la fuerza sobre el sensor, disminuyendo su resistencia y produciendo un pico de voltaje en la señal adquirida. Esta configuración permite diferenciar claramente entre la inspiración activa y la espiración, cumpliendo con el objetivo de monitorear la frecuencia respiratoria  en tiempo real.
@@ -96,6 +98,9 @@ A continuación, se anexa la imagen que describe el divisor de voltaje anteriorm
 
 
 <img width="495" height="209" alt="image" src="https://github.com/user-attachments/assets/27829b2f-fec4-4fae-a534-1326808c03a1" />
+<p align="center">
+  <b>Figura 2.</b> Divisor de voltaje.
+</p>
 
 Posteriormente para poder digitalizar el la señal, antes de poderla visualizar en MATLAB se realizó un código en ARduino IDE para configurar la placa y así poder realizar la respectiva configuración en MATLAB para enlazar la ESP32-S3N16R8 Y Capturar la señal.
 
