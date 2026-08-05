@@ -98,7 +98,7 @@ A continuación, se anexa la imagen que describe el divisor de voltaje anteriorm
 
 
 <img width="495" height="209" alt="image" src="https://github.com/user-attachments/assets/27829b2f-fec4-4fae-a534-1326808c03a1" />
-<p align="center">
+<p align="left">
   <b>Figura 2.</b> Divisor de voltaje.
 </p>
 
@@ -145,7 +145,9 @@ A continuación se anexa la imagen de la captura en tiempo real de la señal res
 
 
 <img width="1619" height="748" alt="image" src="https://github.com/user-attachments/assets/d2354bd4-51ec-414d-bc06-38371abcf45b" />
-
+<p align="center">
+  <b>Figura 3.</b> Respuesta continua en tiempo.
+</p>
 De igual forma se anexa el código en MATLAB con el cual se evidenció la operatividad del sistema por medio de la captura de la señal respiratoria en tiempo real.
 
 ```
@@ -302,12 +304,16 @@ correspondiente archivo .MAT.
 
 
 
-<img width="935" height="297" alt="image" src="https://github.com/user-attachments/assets/c2c8b1d3-c98b-4ca1-81c0-a838b5430aee" />
+<img width="2197" height="372" alt="image" src="https://github.com/user-attachments/assets/07774c95-5fd1-4b84-b228-42170447a527" />
+<p align="center">
+  <b>Figura 4.</b> Respuesta señal reposo.
+</p>
 
 
-
-<img width="938" height="301" alt="image" src="https://github.com/user-attachments/assets/0db29319-3e1e-4173-a6a7-e37368a71e5d" />
-
+<img width="2207" height="357" alt="image" src="https://github.com/user-attachments/assets/3af4d24c-e3fc-401d-bd32-8c8110d55885" />
+<p align="center">
+  <b>Figura 5.</b> Respuesta señal habla.
+</p>
 
 
 
@@ -315,13 +321,31 @@ correspondiente archivo .MAT.
 de ambas señales. Especifique el tipo de filtro (pasa-bajas, pasa banda) y la(s)
 frecuencia(s) de corte.
 
-4. Obtenga la representación en frecuencia de ambas señales e identifique la
+Se utilizo la funcion butter(orden, [frecuencia de corte baja , frecuencia de corte alta] / (frecuencia de muestreo/2), 'bandpass'); para la creacion del filtro pasa banda de 0.05hz a 5hz, el cual nos prporcionaba una atenuacion garantizada de ruidos artefacto como el de la red electrica y un enfoque a señales de movimiento de la deformacion del torax, que son señales lentas que oscilan en mas de un segundo por ciclo en condiciones no patologicas, luego para su implementacion a la señal recibida por el dispositivo microcontrolador ESP32 se utilizo la funcion  filtfilt(numerador, denominador, señal) siendo metodos confiables para una implementacion acorde de filtros IIR.
+
+<img width="1577" height="498" alt="image" src="https://github.com/user-attachments/assets/88e2156b-01dc-4d7e-a87e-b6a9410a61b6" />
+<p align="center">
+  <b>Figura 6.</b> Respuesta señal cruda.
+</p>
+
+<img width="1528" height="422" alt="image" src="https://github.com/user-attachments/assets/4d21fd2c-1765-4b5c-ab2a-9f44a2690a82" />
+<p align="center">
+  <b>Figura 7.</b> Respuesta señal filtrada.
+</p>
+
+
+
+
+5. Obtenga la representación en frecuencia de ambas señales e identifique la
 frecuencia dominante en cada caso.
 
 Para el caso en reposo:
 
 
 <img width="1123" height="747" alt="espectro_profereposo" src="https://github.com/user-attachments/assets/507d0391-bd64-46f6-b1b2-bf149838ffaf" />
+<p align="center">
+  <b>Figura 8.</b> Espectro de frecuencia en reposo.
+</p>
 
 Como se puede observar en la imagen de captura de la señal en estado de reposo, la representación en frecuencias presenta un pico dominante en 0.2 Hz. Al convertir la frecuencia dominante a respiraciones por minuto (0.2 Hz*60), se obtiene una frecuencia respiratoria de 12 respiraciones por minuto para la condición en reposo. Este valor es coherente con el conteo visual de ciclos realizado sobre la señal en el dominio del tiempo donde se observaron seis ciclos en 30 segundos, lo cual lo podemos comprobar matemáticamente como:
 
