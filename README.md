@@ -44,7 +44,15 @@ involucradas. En caso de utilizar modelos de IA generativa (e.g., ChatGPT)
 debe verificar la información contra una fuente confiable (e.g., libros, manuales,
 informes técnicos).
 
-2. Seleccionar el sensor que considere más adecuado para medir la variable de
+El proceso respiratorio es uno de los mas importantes dentro de la fisiologia humana pues de su resultado depende la oxigenacion de las celulas del cuerpo, este proceso de ventilacion tiene como objetivo el transporte de gases  desde el entorno de la persona, hasta los alveolos y viseras.[5] El proceso respiratorio puede ser tanto activo que es cuando se realiza por accion de musculos respiratorios del individuo (el diafragma, los intercostales y musculos accesorio como los escalenos y esternoicleo mastoideo)[10], y pasivo/mecanico que es cuando se produce por mecanismos mecanicos externos como presiones[5]. 
+
+La respiracion se define en dos ciclos diferentes, la inspiracion activa en la que el oxigeno entra en el cuerpo hacia los pulmones y una fase de espiracion pasiva que es en la que se exhala el anhidrido carbonico hacia el exterior [2]
+
+La deformacion toracica que acompaña y media cada ciclo respiratorio es el producto mecanico dado que  las pleuras parietal y viseral estan en contacto, en la inspiracion el desplazamiento de la pared toracica arrastra consigo a los pulmones de modo que el cambio de volumenes que hay en la cavidad toracica induce un cambio equivalente en el volumen pulmonar [9], la expansion de la cavidad toracica disminuye la presion pleural haciendo que la presion alveolar caiga por debajo de la presion atmosferica siendo cerca de -6mmHg en relacion, por lo cual el aire entra hacia los alveolos[10] siguiendo el efecto boyle.
+
+La espiracion es el efecto inverso y de forma pasiva, pues por la relajacion de los musculos el torax se achica y con el, el volumen de los pulmones tambien lo hace, por consiguiente la presion alveolar aumenta hasta  superar la presion atmosferica haciendo que este salga del cuerpo por la diferencia de presiones [10]
+
+3. Seleccionar el sensor que considere más adecuado para medir la variable de
 interés y, de esa forma, capturar las variaciones producidas por el proceso
 respiratorio. Considere un voltaje de alimentación de +3.3 a +5 VDC, en el
 caso de tratarse de un sensor pasivo. Medite sobre cómo adaptar el sensor al
