@@ -52,7 +52,11 @@ La deformacion toracica que acompaña y media cada ciclo respiratorio es el prod
 
 La espiracion es el efecto inverso y de forma pasiva, pues por la relajacion de los musculos el torax se achica y con el, el volumen de los pulmones tambien lo hace, por consiguiente la presion alveolar aumenta hasta  superar la presion atmosferica haciendo que este salga del cuerpo por la diferencia de presiones [10]
 
-3. Seleccionar el sensor que considere más adecuado para medir la variable de
+Durante el habla el patron difiere de los ciclos esperados al caracterizarlos en presion, la respiracion ya no esta governada por el control automatico del tronco encefalico unicamente, la corteza cerebral ejerce un control voluntario que se superpone a ese control y adapta el ritmo y las profundidades respiratorias para poder sincronizarlas con la fonacion, por lo tanto se producen espiraciones prolongadas y controladas voluntariamente dejando la pasividad de espiracion del tronco que se adaptan a cada oracion realizada, eso se puede traducir en un patron menos periodico y con una relacion de Rpm mas variable pero usualmente con menos cantidad de ciclos[9]
+
+
+
+2. Seleccionar el sensor que considere más adecuado para medir la variable de
 interés y, de esa forma, capturar las variaciones producidas por el proceso
 respiratorio. Considere un voltaje de alimentación de +3.3 a +5 VDC, en el
 caso de tratarse de un sensor pasivo. Medite sobre cómo adaptar el sensor al
