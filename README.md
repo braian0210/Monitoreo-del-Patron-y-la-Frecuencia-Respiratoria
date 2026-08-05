@@ -336,18 +336,15 @@ Se utilizo la funcion butter(orden, [frecuencia de corte baja , frecuencia de co
 
 
 
-5. Obtenga la representación en frecuencia de ambas señales e identifique la
+4. Obtenga la representación en frecuencia de ambas señales e identifique la
 frecuencia dominante en cada caso.
 
 Para el caso en reposo:
 
 
 <img width="1123" height="747" alt="espectro_profereposo" src="https://github.com/user-attachments/assets/507d0391-bd64-46f6-b1b2-bf149838ffaf" />
-<p align="center">
-  <b>Figura 8.</b> Espectro de frecuencia en reposo.
-</p>
 
-Como se puede observar en la imagen de captura de la señal en estado de reposo, la representación en frecuencias presenta un pico dominante en 0.2 Hz. Al convertir la frecuencia dominante a respiraciones por minuto (0.2 Hz*60), se obtiene una frecuencia respiratoria de 12 respiraciones por minuto para la condición en reposo. Este valor es coherente con el conteo visual de ciclos realizado sobre la señal en el dominio del tiempo donde se observaron seis ciclos en 30 segundos, lo cual lo podemos comprobar matemáticamente como:
+Como se puede observar en la imagen de captura de la señal en estado de reposo, la representación en frecuencias presenta un pico dominante en 0.2 Hz. Al convertir la frecuencia dominante a respiraciones por minuto (0,2 Hz * 60), se obtiene una frecuencia respiratoria de 12 respiraciones por minuto para la condición en reposo. Este valor es coherente con el conteo visual de ciclos realizado sobre la señal en el dominio del tiempo donde se observaron seis ciclos en 30 segundos, lo cual lo podemos comprobar matemáticamente como:
 
 (6 ciclos/30s x 60) = 12 respiraciones/minuto                   (2)
 
@@ -357,19 +354,14 @@ Para el caso hablando:
 
 
 <img width="1123" height="747" alt="espectro_profehabla" src="https://github.com/user-attachments/assets/11ae9788-a06b-4bc5-89d9-b6a7b9ae6da7" />
-<p align="center">
-  <b>Figura 9.</b> Espectro de frecuencia en habla.
-</p>
 
 
 <img width="178" height="165" alt="image" src="https://github.com/user-attachments/assets/9c45b3af-c75c-494f-b4ae-c3c91a6dacf9" />
-<p align="left">
-  <b>Figura 10.</b> frecuencia pico en habla.
-</p>
 
 
+Para el caso de habla, se obtuvo un pico dominante en 0,166667 Hz con una magnitud de 185.846 unidades y que a diferencia con la señal en reposo, se observa un segundo pico pronunciado alrededor de los 3 Hz y una magnitud de 80 unidades, lo que indica un espectro menos concentrado en una única frecuencia y por lo tanto un patrón respiratoria no tan periódico como el de reposo.
 
-
+Al convertir la frecuencia dominante a respiraciones por minuto se obtiene una frecuencia respiratoria de 10 respiraciones por minuto. Este valor es coherente respecto con el conteo visual de  cuatro picos principales observados sobre la señal en el dominio del tiempo y aunque el número de picos dominantes  es menor al esperado para 10 resp/min en una toma de 30 s, lo cual concuerda con la presencia de la segunda componente espectral relevante en 0.3 Hz, que sugiere ciclos respiratorios adicionales de menor magnitud los cuales posiblemente están asociados a las pausas breves para tomar aire entre frases  no siempre visibles como picos claramente diferenciados en la grafica en el dominio del tiempo.
 
 PARTE C
 
